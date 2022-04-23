@@ -20,7 +20,7 @@ import (
 // Requirments:
 // The first few bytes of the hash must contain 0s (more zeros makes it more difficult to solve)
 
-const Difficulty = 20 // Typically you'd want an alogrithm to determine this and keep epochs at regular intervals
+const Difficulty = 12 // Typically you'd want an alogrithm to determine this and keep epochs at regular intervals
 
 type ProofOfWork struct {
 	Block  *Block
