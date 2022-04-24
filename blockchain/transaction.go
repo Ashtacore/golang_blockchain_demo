@@ -14,17 +14,6 @@ type Transaction struct {
 	Outputs []TxOutput
 }
 
-type TxInput struct {
-	ID        []byte
-	Out       int
-	Signature string
-}
-
-type TxOutput struct {
-	Value  int
-	PubKey string
-}
-
 func (tx *Transaction) SetID() {
 	var encoded bytes.Buffer
 	var hash [32]byte
@@ -88,13 +77,4 @@ func CoinbaseTx(to, data string) *Transaction {
 
 func (tx *Transaction) IsCoinbase() bool {
 	return len(tx.Inputs) == 1 && len(tx.Inputs[0].ID) == 0 && tx.Inputs[0].Out == -1
-}
-
-// Typically there'd be more logic here to match public keys and their signatures
-func (in *TxInput) CanUnlockOutputWith(data string) bool {
-	return in.Signature == data
-}
-
-func (out *TxOutput) CanBeUnlockedWith(data string) bool {
-	return out.PubKey == data
 }
