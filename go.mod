@@ -27,3 +27,5 @@ require (
 	github.com/mr-tron/base58 v1.2.0
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4
 )
+
+require github.com/vrecan/death/v3 v3.0.3 // indirect
